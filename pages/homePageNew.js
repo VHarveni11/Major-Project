@@ -7,9 +7,10 @@ import { useState, useEffect } from 'react'
 import UploadModal from '../components/UploadModal'
 import useSpotify from '../hooks/useSpotify'
 import Fullscreen from "../components/fullscreen"
+import HeaderNew from "../components/headerNew"
+import NavNew from '../components/navNew'
 
-
-const HomePage = () => {
+const HomePageNew = () => {
 
 
   const [showUploadMusic, setShowUploadMusic] = useState(false)
@@ -44,9 +45,9 @@ const HomePage = () => {
 
   return (
     <div className='flex'>
-      <Nav/>
+      <NavNew/>
       <div className='w-full'>
-        <Header setShowUploadMusic={setShowUploadMusic} />
+        <HeaderNew setShowUploadMusic={setShowUploadMusic} />
         <Playlist songs={songs} />
         <PlayerControls songs={songs} click={maxim} />
         {showUploadMusic && (
@@ -65,4 +66,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default HomePageNew

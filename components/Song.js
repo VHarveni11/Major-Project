@@ -7,14 +7,12 @@ import { useDispatch } from 'react-redux';
 import { setCurrent } from './stores/player';
 import { useSelector } from 'react-redux';
 
-
 export default function Song({item}) {
    const dispatch = useDispatch();
   const {current} = useSelector(state => state.player);
     const updateCurrent = () => {
         dispatch(setCurrent(item));
-    }
-
+    } 
 
     return (
     
@@ -22,7 +20,7 @@ export default function Song({item}) {
                 <div className='relative '> 
                   <img className='w-auto h-auto inset-0 object-cover mb-4' src={item.image} />
                   <button onClick={updateCurrent} className='w-12 h-12 bg-primary absolute right-2 bottom-2 transition-opacity rounded-full flex items-center shadow-2xl justify-center opacity-0 group-hover:opacity-100 group-active:opacity-100'>
-                    <Icon name={current?.id == item.id ? 'pause' : 'play'}/>
+                    <Icon name={current?.id == item.id ? 'pause' : 'play'}/> 
                   </button>
                 </div>
                 <span className='font-semibold text-white text-[16px] whitespace-nowrap'>{item.title}</span> <br />

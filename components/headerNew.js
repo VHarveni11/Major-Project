@@ -22,12 +22,13 @@ const style = {
   playButton: `bg-white-500 w-16 h-16 flex pl-2 items-center justify-center rounded-full cursor-pointer`,
 }
 
-const Header = ({ setShowUploadMusic }) => {
+const HeaderNew = ({ setShowUploadMusic }) => {
   const { currentSong } = useContext(SpotifyContext)
+
   const router = useRouter()
 
   const handleClick = () => {
-    router.push('userprofile')
+    router.push('artistProfile')
   }
 
   return (
@@ -43,14 +44,12 @@ const Header = ({ setShowUploadMusic }) => {
         </div>
 
         <div className={style.headerRight}>
-          <UploadButton setShowUploadMusic={setShowUploadMusic} />
 
           <div className={style.profile}>
             <div className={style.profileAvatarContainer}>
               <img alt='' src='assets/avatar.jpg' className='rounded-full' />
             </div>
-            {/*<p>User</p>*/}
-            <button onClick={handleClick}>User</button>
+            <button onClick={handleClick}>Artist</button>
           </div>
         </div>
       </div>
@@ -60,7 +59,7 @@ const Header = ({ setShowUploadMusic }) => {
           alt=''
           src='https://angartwork.akamaized.net/webp/?id=150949021&size=296'
           width={280}
-          height={280} 
+          height={280}
         />
 
         <div className='ml-5'>
@@ -102,4 +101,4 @@ const Header = ({ setShowUploadMusic }) => {
   )
 }
 
-export default Header
+export default HeaderNew

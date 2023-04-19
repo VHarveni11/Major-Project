@@ -13,7 +13,7 @@ function Homenav() {
   return (
     <Provider store={stores}> 
     <Router>
-    <div className='flex'>
+    <div className='flex'> 
       <Nav />
       <div className='w-full'>
         <Home/>

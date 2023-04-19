@@ -13,7 +13,6 @@ export const SpotifyProvider = ({ children }) => {
   useEffect(() => {
     if (isPlaying) {
       let audio = document.querySelector('#audio-element')
-
       audio.addEventListener("timeupdate", function () {
         setTimestamp(secondsToMinSec(audio.currentTime))
       }, false)
@@ -33,6 +32,7 @@ export const SpotifyProvider = ({ children }) => {
   const playOnSelect = (song) => {
     try {
       document.querySelector('#audio-element').src = song.musicUrl
+      //document.querySelector('#audio-element').src = song.src
       document.querySelector('#audio-element').play()
       setCurrentSong(song)
       setIsPlaying(true)
@@ -72,24 +72,32 @@ export const SpotifyProvider = ({ children }) => {
 
   const playNext = (songs) => {
     const id = songs.findIndex(value => value.account === currentSong);
+    //const id = songs.id
     if (songs.length === id + 1) {
       playOnSelect(songs[0].account)
       setCurrentSong(songs[0].account)
+      //playOnSelect(songs[0])
+      //setCurrentSong(songs[0])
       return
     }
     const nextSong = songs[id + 1];
     playOnSelect(nextSong.account);
+    //playOnSelect(nextSong.account);
   }
 
   const playPrevious = (songs) => {
     const id = songs.findIndex(value => value.account === currentSong);
+    //const id = songs.id
     if (id === 0) {
       playOnSelect(songs[songs.length - 1].account)
       setCurrentSong(songs[songs.length - 1].account)
+      //playOnSelect(songs[songs.length - 1])
+      //setCurrentSong(songs[songs.length - 1])
       return
     }
     const previousSong = songs[id - 1];
     playOnSelect(previousSong.account);
+    //playOnSelect(previousSong.account);
   }
   return <SpotifyContext.Provider value={{
     isPlaying, setIsPlaying,

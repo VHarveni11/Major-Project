@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react'
 import TableRow from './table/tableRow'
-
+ 
 const Playlist = ({songs}) => {
   console.log("Songs"+songs)
   return (
-    <div className={styles.tableWrapper}>
+    <div className={styles.tableWrapper}> 
       <table className={styles.table}>
         <tbody className={styles.tableHeader}>
           <tr>
             <th className='pb-3'>#</th>
-            <th className='pb-3'>TITLE</th>
+            <th className='pb-3'>TITLE</th> 
             <th className='pb-3'>PLAYS</th>
             <th className='pb-3'>
               <img alt='' src='assets/time.svg' />
@@ -20,7 +20,8 @@ const Playlist = ({songs}) => {
         
         {songs.map(song => {
           console.log("songs "+song)
-          return <TableRow key={song.id} props={song.account} />
+          //return <TableRow key={song.id} props={song.account} />
+          return <TableRow key={song.id} props={song} />
         })} 
         
          
@@ -33,6 +34,6 @@ export default Playlist
 
 const styles = {
   table: `w-full text-left`,
-  tableWrapper: `max-w-7xl m-auto p-3 mt-5 mb-40`,
+  tableWrapper: `max-w-7xl m-auto p-3 mt-5 mb-30`,
   tableHeader: `border-b border-gray-100/20 pb-5 opacity-50`,
 }

@@ -7,12 +7,14 @@ import { useState, useEffect } from 'react'
 import UploadModal from '../components/UploadModal'
 import useSpotify from '../hooks/useSpotify'
 import Fullscreen from "../components/fullscreen"
+import LoginButtons from '../components/personalLogin'
+import HomePageNew from "./homePageNew"
+import HomePage from './homepage'
+
+const HomeNew = () => {
 
 
-const HomePage = () => {
-
-
-  const [showUploadMusic, setShowUploadMusic] = useState(false)
+  /*const [showUploadMusic, setShowUploadMusic] = useState(false)
   const [title, setTitle] = useState('')
   const [musicUrl, setMusicUrl] = useState('')
 
@@ -20,7 +22,7 @@ const HomePage = () => {
     musicUrl,
     title,
     setTitle,
-    setMusicUrl, 
+    setMusicUrl,
     setShowUploadMusic,
   )
 
@@ -30,39 +32,32 @@ const HomePage = () => {
     getSongs().then(songs => {
       setSongs(songs)
     })
-  }, [])
+  }, [])*/
 
 
   const [full,setFull]=useState(false)
+  const [user,setUser]=useState(false) // new
+  const [artist,setArtist]=useState(false) //new
   
   function maxim(){
     console.log("Maxim clicked")
     setFull(prev=>!prev);
   }
 
+  function userClick(){
+    setUser(user=>!user)
+  } //new 
+
+  function artistClick(){
+    setArtist(artist=>!artist)
+  }
+
   if(full) return <Fullscreen click={maxim} />
 
-  return (
-    <div className='flex'>
-      <Nav/>
-      <div className='w-full'>
-        <Header setShowUploadMusic={setShowUploadMusic} />
-        <Playlist songs={songs} />
-        <PlayerControls songs={songs} click={maxim} />
-        {showUploadMusic && (
-          <UploadModal
-            title={title}
-            setTitle={setTitle}
-            setShowUploadMusic={setShowUploadMusic}
-            musicUrl={musicUrl}
-            setMusicUrl={setMusicUrl}
-            newMusic={newMusic}
-          />
-        )}
-      </div>
-      <Activity />
-    </div>
-  )
+  if(!user && !artist) return <LoginButtons click={userClick} click2={artistClick} />
+  if(artist) return <HomePageNew/>
+
+  if(user) return <HomePage/>
 }
 
-export default HomePage
+export default HomeNew

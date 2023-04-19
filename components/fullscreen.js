@@ -4,7 +4,7 @@ import { useContext, useState } from "react"
 import { SpotifyContext } from "../context/context"
 
 
-const design={
+const design={ 
   display:"flex",
   justifyContent: "flex-start",
   height:"50px",

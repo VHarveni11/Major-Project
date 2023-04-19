@@ -6,6 +6,7 @@ import { PublicKey } from '@solana/web3.js'
 import { useWallet } from '@solana/wallet-adapter-react'
 import HomePage from '../pages/homepage'
 import Homenav from '../pages/homenav'
+import HomeNew from '../pages/homeNew'
 
 const anchor = require('@project-serum/anchor')
 
@@ -72,7 +73,8 @@ export const Payment = () => {
   /** show homepage if user makes payment */
   //if (isPaid) 
   //return <HomePage />
-  return <Homenav/>
+  //return <Homenav/>
+  return <HomeNew/>
   /** Payment Component */
   return (
     <div className={styles.main}>

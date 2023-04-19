@@ -3,15 +3,17 @@ import { SpotifyContext } from '../../context/context'
 
 const TableRow = ({ props }) => {
   const { playOnSelect } = useContext(SpotifyContext)
-
+ 
   return (
     <tbody>
       <tr onClick={() => playOnSelect(props)}>
-        <th className={styles.th}>{props.index}</th>
+        {/*<th className={styles.th}>{props.index}</th>*/}
+        <th className={styles.th}>{props.id}</th>
         <th className={styles.th}>
           <div>
             <p className="font-bold">{props.title}</p>
-            <p className="opacity-50">{'Bill Board'}</p>
+            <p className="opacity-50">{props.artist}</p>
+            {/*<p className="opacity-50">{'Bill Board'}</p>*/}
             {/* <p className="opacity-50">{props.artiste}</p> */}
           </div>
         </th>

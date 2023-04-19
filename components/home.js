@@ -177,12 +177,12 @@ export default function Home() {
           </button>
         </div>
 
-      </div>
+      </div> 
       </div>
         <div className='flex justify-between items-end mb-4'>
-        <PlayBox title={'Compiled for user'}/>
+        <PlayBox title={'Compiled for user'}/> 
         <PlayBox see />
-        </div>
+        </div> 
         <div className='grid grid-cols-5 gap-x-6'>
                 {items.map(item => <Song item={item} key={item.id} /> )}
                 

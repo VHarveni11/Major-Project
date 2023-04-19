@@ -23,7 +23,7 @@ const routeResult = useRoutes(routes)
 <Link href='/about'><a>hometrial</a></Link>
 */
 
-const Nav =() =>{
+const NavNew =() =>{
   const router = useRouter()
   
   const handleClick = () => {
@@ -31,7 +31,7 @@ const Nav =() =>{
   } 
 
   const handleLibClick = () => {
-    router.push('homepage')
+    router.push('homePageNew')
   }
 
   return (
@@ -94,4 +94,4 @@ const Nav =() =>{
   )
 }
 
-export default Nav
+export default NavNew
