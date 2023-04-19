@@ -37,19 +37,19 @@ const NavNew =() =>{
   return (
     <div className={styles.nav}>
       <div className='mb-10'>
-        <NavLink icon='assets/home.svg' title='' className={styles.link} />
+        {/*<NavLink icon='assets/home.svg' title='' className={styles.link} />*/}
         <button onClick={handleClick}>Home</button>
         <NavLink
           icon='assets/search.svg'
           title='Search'
           className={styles.link}
         />
-        <NavLink
+        {/*<NavLink
           icon='assets/playlist.svg'
           //title='Your library'
           title=''
           className={styles.link}
-        />
+  />*/}
         <button onClick={handleLibClick}>Library</button>
       </div>
 
