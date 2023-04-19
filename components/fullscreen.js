@@ -37,6 +37,6 @@ export default function fullscreen({click}) {
     <div >
     <Fullplayer click={click}/>
     </div>
-    </>
+    </> 
   )
 }

@@ -14,6 +14,7 @@ import Track from './tracks'
 import Following from './following'
 import Artist1 from './artist_1track'
 import Followers from './followers'
+import NavNew from '../components/navNew'
 
 function Profile() {
   const data="Robert"
@@ -21,7 +22,7 @@ function Profile() {
     <Provider store={stores}>
     <Router>
     <div className='flex'>
-      <Nav />
+      <NavNew />
       <div className='w-full'>
         <PHeader data={data}/>
         <ArtistAlbum/>

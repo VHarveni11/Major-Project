@@ -28,7 +28,7 @@ const HeaderNew = ({ setShowUploadMusic }) => {
   const router = useRouter()
 
   const handleClick = () => {
-    router.push('artistProfile')
+    router.push('userprofile')
   }
 
   return (
@@ -37,7 +37,7 @@ const HeaderNew = ({ setShowUploadMusic }) => {
       <div className='flex items-center'>
           <div className={style.arrowButton}>
             <img alt='' src='assets/chevronLeft.svg' width={20} height={20} />
-          </div>
+          </div> 
           <div className={style.arrowButton}>
             <img alt='' src='assets/chevronRight.svg' width={20} height={20} />
           </div>
@@ -48,8 +48,8 @@ const HeaderNew = ({ setShowUploadMusic }) => {
           <div className={style.profile}>
             <div className={style.profileAvatarContainer}>
               <img alt='' src='assets/avatar.jpg' className='rounded-full' />
-            </div>
-            <button onClick={handleClick}>Artist</button>
+            </div> 
+            <button onClick={handleClick}>User</button>
           </div>
         </div>
       </div>

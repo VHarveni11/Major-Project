@@ -27,7 +27,7 @@ const Header = ({ setShowUploadMusic }) => {
   const router = useRouter()
 
   const handleClick = () => {
-    router.push('userprofile')
+    router.push('artistProfile')
   }
 
   return (
@@ -50,7 +50,7 @@ const Header = ({ setShowUploadMusic }) => {
               <img alt='' src='assets/avatar.jpg' className='rounded-full' />
             </div>
             {/*<p>User</p>*/}
-            <button onClick={handleClick}>User</button>
+            <button onClick={handleClick}>Artist</button>
           </div>
         </div>
       </div>

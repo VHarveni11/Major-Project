@@ -24,7 +24,7 @@ const routeResult = useRoutes(routes)
 <Link href='/about'><a>hometrial</a></Link>
 */
 
-const Nav =({click}) =>{
+const NavClone =({hclick}) =>{
   const router = useRouter()
   
   const handleClick = () => {
@@ -44,25 +44,24 @@ const Nav =({click}) =>{
 
   if(nav) return <HomePage hclick={playnew} />
 
-
-
   return (
     <div className={styles.nav}>
       <div className='mb-10'>
-        {/*<NavLink icon='assets/home.svg' title='' className={styles.link} />*/}
+        <NavLink icon='assets/home.svg' title='' className={styles.link} />
         <button onClick={handleClick}>Home</button>
         <NavLink
           icon='assets/search.svg'
           title='Search'
           className={styles.link}
         /> 
-        {/*<NavLink
+        <NavLink
           icon='assets/playlist.svg'
           //title='Your library'
           title=''
-  className={styles.link}/>*/}
-        <button onClick={handleLibClick}>Library</button>
-        {/*<button onClick={playnew}>LibraryNew</button>*/}
+          className={styles.link}
+        />
+        {/*<button onClick={handleLibClick}>Library</button>*/}
+        <button onClick={hclick}>LibraryNew</button>
 
       </div>
 
@@ -72,17 +71,11 @@ const Nav =({click}) =>{
           title='Create Playlist'
           className={styles.link}
         />
-        {/* <NavLink
+        <NavLink
           icon='assets/heart.svg'
           title='Liked Songs'
           className={styles.link}
-        /> */}
-        <button onClick={click}
-      
-        className={styles.link}>
-        <img src='assets/heart.svg'></img>Liked Songs
-        </button>
-
+        />
       </div>
 
       <div className='mt-5 leading-8 flex flex-col gap-[10px]'>

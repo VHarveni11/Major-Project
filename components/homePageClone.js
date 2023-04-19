@@ -8,9 +8,8 @@ import UploadModal from '../components/UploadModal'
 import useSpotify from '../hooks/useSpotify'
 import Fullscreen from "../components/fullscreen"
 import HeaderNew from "../components/headerNew"
-import NavNew from '../components/navNew'
 
-const HomePageNew = () => {
+const HomePage = ({hclick}) => {
 
 
   const [showUploadMusic, setShowUploadMusic] = useState(false)
@@ -36,7 +35,7 @@ const HomePageNew = () => {
 
   const [full,setFull]=useState(false)
   
-  function maxim(){
+  function maxim(){ 
     console.log("Maxim clicked")
     setFull(prev=>!prev);
   }
@@ -44,15 +43,15 @@ const HomePageNew = () => {
   if(full) return <Fullscreen click={maxim} />
 
   return (
-    <div className='flex'> 
-      <NavNew/>
+    <div className='flex'>
+      <Nav onClick={hclick}/>
       <div className='w-full'>
-        <Header setShowUploadMusic={setShowUploadMusic} />
+        <HeaderNew setShowUploadMusic={setShowUploadMusic} />
         <Playlist songs={songs} />
         <PlayerControls songs={songs} click={maxim} />
         {showUploadMusic && (
-          <UploadModal 
-            title={title}
+          <UploadModal
+            title={title} 
             setTitle={setTitle}
             setShowUploadMusic={setShowUploadMusic}
             musicUrl={musicUrl}
@@ -66,4 +65,4 @@ const HomePageNew = () => {
   )
 }
 
-export default HomePageNew
+export default HomePage

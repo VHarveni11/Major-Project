@@ -41,7 +41,8 @@ export default function Player() {
 
 
   return (
-      <div className='flex justify-between items-center px-4 justify-center'>
+    //   <div className='fixed bottom-0 left-0 flex justify-between items-center px-4 justify-center'>
+    <div className='fixed bottom-0 left-0 p-5 py-3 pr-10 w-screen bg-[#242424] z-40 flex items-center justify-between'>
         <div className='min-w-[11.25rem] w-[30%]ß'>
         {current && (
             <div className='flex items-center'>         

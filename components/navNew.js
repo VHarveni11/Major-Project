@@ -25,7 +25,7 @@ const routeResult = useRoutes(routes)
 
 const NavNew =() =>{
   const router = useRouter()
-  
+   
   const handleClick = () => {
     router.push('homenav')
   } 

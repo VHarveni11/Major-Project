@@ -76,7 +76,7 @@ const Fullplayer = ({songs, click}) => {
           alt=''
           src='https://cdn-icons-png.flaticon.com/512/8001/8001620.png'
           width={30}
-          height={30}
+          height={30} 
         />
         
           </div> 

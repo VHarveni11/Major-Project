@@ -83,7 +83,7 @@ const PlayerControls = ({songs, click}) => {
           height={30}
         />
         
-          </div> 
+          </div>  
     </div >
     </>
   )

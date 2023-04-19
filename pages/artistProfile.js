@@ -19,7 +19,7 @@ import NavNew from '../components/navNew'
 function ArtProfile() {
   const data="Peter"
   return (
-    <Provider store={stores}>
+    <Provider store={stores}> 
     <Router>
     <div className='flex'>
       <NavNew />
